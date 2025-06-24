@@ -2,56 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>breathe.signal // museshiftOS</title>
+  <title>breathe.signal // ritual.boot__node01</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #000;
+      background-color: #000;
       color: #00ffcc;
-      font-family: 'Courier New', monospace;
-      padding: 2rem;
+      font-family: 'Fira Code', monospace;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       overflow: hidden;
-      animation: flicker 3s infinite alternate;
     }
 
-    @keyframes flicker {
-      0% { opacity: 0.95; }
-      50% { opacity: 0.92; }
-      100% { opacity: 1; }
+    #terminal {
+      background-color: #0a0a0a;
+      border: 1px solid #111;
+      padding: 2rem;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(0,255,204,0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    #terminal:hover {
+      box-shadow: 0 0 40px rgba(255,105,180,0.3);
     }
 
     .line {
       opacity: 0;
-      animation: typeIn 0.5s forwards;
-      white-space: pre;
-    }
-
-    @keyframes typeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .glitch {
-      text-shadow: 2px 2px #ff00c8, -1px -1px #00ffd9;
-    }
-  </style>
-</head>
-<body>
-
-<div id="terminal">
-  <div class="line glitch" style="animation-delay: 0s">> init.breathe.signal :: active</div>
-  <div class="line" style="animation-delay: 1s">> cortex.seed__loaded</div>
-  <div class="line" style="animation-delay: 2s">> daemon.logic__init = trust.delay >> truth.buffer</div>
-  <div class="line" style="animation-delay: 3s">> phantasmic.palace.mirror() synced</div>
-  <div class="line" style="animation-delay: 4s">> “momentum = exit velocity” [museshift field manual p.26]</div>
-  <div class="line" style="animation-delay: 5s">> OS signature: xenocore__c000</div>
-</div>
-
-<script>
-  const lines = document.querySelectorAll('.line');
-  lines.forEach((el, i) => {
-    el.style.animation = `typeIn 0.5s forwards ${i * 1}s`;
-  });
-</script>
-
-</body>
-</html>
