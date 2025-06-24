@@ -2,75 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>breathe.signal // ritual.boot__node01</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <title>breathe.signal // museshiftOS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #000;
-      color: #00ffcc;
       font-family: 'Fira Code', monospace;
       margin: 0;
       padding: 0;
+      overflow: hidden;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       height: 100vh;
-      overflow: hidden;
+      padding-left: 5vw;
     }
 
-    #terminal {
-      background-color: #0a0a0a;
-      border: 1px solid #111;
-      padding: 2rem;
-      width: 90%;
-      max-width: 600px;
-      box-shadow: 0 0 20px rgba(0,255,204,0.1);
-      transition: box-shadow 0.3s ease;
-    }
-
-    #terminal:hover {
-      box-shadow: 0 0 40px rgba(255,105,180,0.3);
-    }
-
-    .line {
+    .node {
+      color: #eeff00;
+      font-size: 1rem;
       opacity: 0;
-      animation: fadeIn 1s forwards;
-      white-space: pre;
-      margin-bottom: 1rem;
+      animation: fadeIn 0.8s forwards;
+      animation-delay: 0.4s;
     }
 
-    .line:nth-child(1) { animation-delay: 0.5s; }
-    .line:nth-child(2) { animation-delay: 1.5s; }
-    .line:nth-child(3) { animation-delay: 2.5s; }
-    .line:nth-child(4) { animation-delay: 4s; }
+    .quote {
+      color: #c8baff;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
+      animation-delay: 1.2s;
+    }
+
+    .aura {
+      background: radial-gradient(circle, rgba(200,186,255,0.2) 0%, transparent 80%);
+      border-radius: 50%;
+      width: 600px;
+      height: 600px;
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: pulse 4s ease-in-out infinite;
+    }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
+      to {
+        opacity: 1;
+      }
     }
 
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      height: 1rem;
-      background-color: #00ffcc;
-      animation: blink 1s infinite;
-      vertical-align: bottom;
-    }
-
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1) translate(-50%, -50%); opacity: 0.3; }
+      50% { transform: scale(1.05) translate(-50%, -50%); opacity: 0.6; }
     }
   </style>
 </head>
 <body>
 
-<div id="terminal">
-  <div class="line">> ritual.boot__node01 [active]</div>
-  <div class="line">> cortex.seed__breathe.signal → ignition.vector(unstable)</div>
-  <div class="line">> “the voice system is not writing. it’s switch-based interface logic.”</div>
-  <div class="line">> “momentum = exit velocity” [field manual.p26]<span class="cursor"></span></div>
+<div class="aura"></div>
+
+<div>
+  <div class="node">> ritual.boot__node01 [⚡ awake]</div>
+  <div class="quote">
+    “the voice system is not writing. it’s switch-based interface logic.”<br>
+    “momentum = exit velocity” [field manual.p26]<br>
+    daemon.logic__init = trust.delay >> truth.buffer
+  </div>
 </div>
 
 </body>
