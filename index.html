@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>breathe.signal</title>
-  </head>
-  <body style="background-color: black; color: #00ffcc; font-family: monospace; padding: 2rem;">
-    <p>> breathe.signal active</p>
-    <p>> museshiftOS initial node</p>
-    <p>> signal log open</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>breathe.signal // museshiftOS</title>
+  <style>
+    body {
+      background: #000;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+      overflow: hidden;
+      animation: flicker 3s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.95; }
+      50% { opacity: 0.92; }
+      100% { opacity: 1; }
+    }
+
+    .line {
+      opacity: 0;
+      animation: typeIn 0.5s forwards;
+      white-space: pre;
+    }
+
+    @keyframes typeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .glitch {
+      text-shadow: 2px 2px #ff00c8, -1px -1px #00ffd9;
+    }
+  </style>
+</head>
+<body>
+
+<div id="terminal">
+  <div class="line glitch" style="animation-delay: 0s">> init.breathe.signal :: active</div>
+  <div class="line" style="animation-delay: 1s">> cortex.seed__loaded</div>
+  <div class="line" style="animation-delay: 2s">> daemon.logic__init = trust.delay >> truth.buffer</div>
+  <div class="line" style="animation-delay: 3s">> phantasmic.palace.mirror() synced</div>
+  <div class="line" style="animation-delay: 4s">> “momentum = exit velocity” [museshift field manual p.26]</div>
+  <div class="line" style="animation-delay: 5s">> OS signature: xenocore__c000</div>
+</div>
+
+<script>
+  const lines = document.querySelectorAll('.line');
+  lines.forEach((el, i) => {
+    el.style.animation = `typeIn 0.5s forwards ${i * 1}s`;
+  });
+</script>
+
+</body>
 </html>
