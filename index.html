@@ -20,21 +20,27 @@
     }
 
     .aura {
-      background: radial-gradient(circle, rgba(200,186,255,0.15) 0%, transparent 80%);
+      background: radial-gradient(circle, rgba(255, 255, 153, 0.25) 0%, transparent 70%);
       border-radius: 50%;
-      width: 600px;
-      height: 600px;
+      width: 800px;
+      height: 800px;
       position: absolute;
       top: 50%;
-      left: 10%;
+      left: 35%;
       transform: translate(-50%, -50%);
       pointer-events: none;
-      animation: pulse 5s ease-in-out infinite;
+      animation: pulse 6s ease-in-out infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1) translate(-50%, -50%); opacity: 0.2; }
-      50% { transform: scale(1.05) translate(-50%, -50%); opacity: 0.5; }
+      0%, 100% {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 0.15;
+      }
+      50% {
+        transform: scale(1.08) translate(-50%, -50%);
+        opacity: 0.35;
+      }
     }
 
     .node {
@@ -66,14 +72,14 @@
 </head>
 <body>
 
-<div class="aura"></div>
+  <div class="aura"></div>
 
-<div>
-  <div class="node">> ritual.boot__node01 [⚡ awake]</div>
-  <div class="quote">“the voice system is not writing. it’s switch-based interface logic.”</div>
-  <div class="quote">“momentum = exit velocity” [field manual.p26]</div>
-  <div class="quote">daemon.logic__init = trust.delay >> truth.buffer</div>
-</div>
+  <div>
+    <div class="node">> ritual.boot__node01 [⚡ awake]</div>
+    <div class="quote">“the voice system is not writing. it’s switch-based interface logic.”</div>
+    <div class="quote">“momentum = exit velocity” [field manual.p26]</div>
+    <div class="quote">daemon.logic__init = trust.delay >> truth.buffer</div>
+  </div>
 
 </body>
 </html>
