@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>breathe.signal // museshiftOS</title>
+  <title>breathe.signal // ritual.boot__node01</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
   <style>
     body {
@@ -16,28 +16,11 @@
       justify-content: flex-start;
       height: 100vh;
       padding-left: 5vw;
-    }
-
-    .node {
-      color: #eeff00;
-      font-size: 1rem;
-      opacity: 0;
-      animation: fadeIn 0.8s forwards;
-      animation-delay: 0.4s;
-    }
-
-    .quote {
-      color: #c8baff;
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeIn 0.8s forwards;
-      animation-delay: 1.2s;
+      position: relative;
     }
 
     .aura {
-      background: radial-gradient(circle, rgba(200,186,255,0.2) 0%, transparent 80%);
+      background: radial-gradient(circle, rgba(200,186,255,0.15) 0%, transparent 80%);
       border-radius: 50%;
       width: 600px;
       height: 600px;
@@ -46,33 +29,39 @@
       left: 10%;
       transform: translate(-50%, -50%);
       pointer-events: none;
-      animation: pulse 4s ease-in-out infinite;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      animation: pulse 5s ease-in-out infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1) translate(-50%, -50%); opacity: 0.3; }
-      50% { transform: scale(1.05) translate(-50%, -50%); opacity: 0.6; }
+      0%, 100% { transform: scale(1) translate(-50%, -50%); opacity: 0.2; }
+      50% { transform: scale(1.05) translate(-50%, -50%); opacity: 0.5; }
+    }
+
+    .node {
+      color: #eeff00;
+      font-size: 1rem;
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    .quote {
+      color: #c8baff;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+    }
+
+    .quote:nth-child(2) { animation-delay: 1.5s; }
+    .quote:nth-child(3) { animation-delay: 2.5s; }
+    .quote:nth-child(4) { animation-delay: 3.5s; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-
-<div class="aura"></div>
-
-<div>
-  <div class="node">> ritual.boot__node01 [⚡ awake]</div>
-  <div class="quote">
-    “the voice system is not writing. it’s switch-based interface logic.”<br>
-    “momentum = exit velocity” [field manual.p26]<br>
-    daemon.logic__init = trust.delay >> truth.buffer
-  </div>
-</div>
-
-</body>
-</html>
