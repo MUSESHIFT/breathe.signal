@@ -1,59 +1,47 @@
 
 body {
-  background: #000;
-  color: #faff00;
+  background-color: black;
+  color: white;
   font-family: 'Courier New', monospace;
   padding: 2rem;
-  font-size: 1.5rem;
-  transition: color 0.5s ease;
+  overflow: hidden;
+  transition: background 1s, color 1s;
 }
-
-#terminal {
-  margin-bottom: 2rem;
+#controls {
+  margin-top: 20px;
 }
-
 button {
-  background: transparent;
-  color: #faff00;
-  border: 2px solid;
-  padding: 0.5rem 1.5rem;
-  margin: 0.3rem;
-  font-size: 1.1rem;
+  margin-right: 10px;
+  padding: 10px;
   font-family: 'Courier New', monospace;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  border-radius: 4px;
-  box-shadow: 0 0 5px #faff0033;
 }
-
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #faff0099;
+.chakra-root {
+  background-color: #1b1b1b;
+  color: #f44336;
 }
-
-/* Chakra colors */
-[data-chakra="root"] {
-  --chakra-color: #e53935;
+.chakra-sacral {
+  background-color: #2a1f1f;
+  color: #ff9800;
 }
-[data-chakra="sacral"] {
-  --chakra-color: #ff9800;
+.chakra-solar {
+  background-color: #222211;
+  color: #ffeb3b;
 }
-[data-chakra="solar"] {
-  --chakra-color: #fdd835;
+.chakra-heart {
+  background-color: #1a2b1a;
+  color: #4caf50;
 }
-[data-chakra="heart"] {
-  --chakra-color: #66bb6a;
+.chakra-throat {
+  background-color: #102b3f;
+  color: #03a9f4;
 }
-[data-chakra="throat"] {
-  --chakra-color: #29b6f6;
+.chakra-third-eye {
+  background-color: #211a3a;
+  color: #673ab7;
 }
-[data-chakra="third eye"] {
-  --chakra-color: #7e57c2;
-}
-[data-chakra="crown"] {
-  --chakra-color: #ab47bc;
-}
-
-body {
-  transition: color 0.5s ease, background-color 0.5s ease;
+.chakra-crown {
+  background-color: #2e003e;
+  color: #e1bee7;
 }
