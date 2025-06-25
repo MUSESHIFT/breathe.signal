@@ -1,21 +1,39 @@
 
 body {
+<<<<<<< HEAD
   background-color: black;
   color: white;
   font-family: 'Courier New', monospace;
   padding: 2rem;
   overflow: hidden;
   transition: background 1s, color 1s;
+=======
+  background: #000;
+  color: #72f9ff;
+  font-family: 'Courier New', monospace;
+  padding: 2rem;
+  font-size: 1.5rem;
+>>>>>>> d08a02f20a57324dd99d2dd49505f0f3acd1fcce
 }
 #controls {
   margin-top: 20px;
 }
 button {
+<<<<<<< HEAD
   margin-right: 10px;
   padding: 10px;
+=======
+  background: transparent;
+  color: #72f9ff;
+  border: 2px solid;
+  padding: 0.5rem 1.5rem;
+  margin: 0.3rem;
+  font-size: 1.1rem;
+>>>>>>> d08a02f20a57324dd99d2dd49505f0f3acd1fcce
   font-family: 'Courier New', monospace;
   border: none;
   cursor: pointer;
+<<<<<<< HEAD
 }
 .chakra-root {
   background-color: #1b1b1b;
@@ -40,6 +58,66 @@ button {
 .chakra-third-eye {
   background-color: #211a3a;
   color: #673ab7;
+=======
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #00ffff33;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00ffff99;
+}
+
+/* Chakra colors */
+button[data-chakra="root"] {
+  border-color: #e53935;
+}
+button[data-chakra="root"]:hover {
+  background: #e5393533;
+}
+
+button[data-chakra="sacral"] {
+  border-color: #ff9800;
+}
+button[data-chakra="sacral"]:hover {
+  background: #ff980033;
+}
+
+button[data-chakra="solar"] {
+  border-color: #fdd835;
+}
+button[data-chakra="solar"]:hover {
+  background: #fdd83533;
+}
+
+button[data-chakra="heart"] {
+  border-color: #66bb6a;
+}
+button[data-chakra="heart"]:hover {
+  background: #66bb6a33;
+}
+
+button[data-chakra="throat"] {
+  border-color: #29b6f6;
+}
+button[data-chakra="throat"]:hover {
+  background: #29b6f633;
+}
+
+button[data-chakra="third eye"] {
+  border-color: #7e57c2;
+}
+button[data-chakra="third eye"]:hover {
+  background: #7e57c233;
+}
+
+button[data-chakra="crown"] {
+  border-color: #ab47bc;
+}
+button[data-chakra="crown"]:hover {
+  background: #ab47bc33;
+>>>>>>> d08a02f20a57324dd99d2dd49505f0f3acd1fcce
 }
 .chakra-crown {
   background-color: #2e003e;
