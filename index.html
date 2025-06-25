@@ -2,94 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>breathe.signal // ritual.boot__node01</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <title>museshiftOS // breathe.signal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CDN for utility magic -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Terminal font -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --chakra-color: #00ffcc;
+      --bg-color: #000000;
+    }
+
     body {
-      background-color: #000;
-      font-family: 'Fira Code', monospace;
-      margin: 0;
-      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--chakra-color);
+      font-family: 'VT323', monospace;
+      padding: 2rem;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-      padding-left: 5vw;
-      position: relative;
     }
 
-    .burst {
-      background: radial-gradient(circle, rgba(255, 255, 153, 0.75) 0%, transparent 60%);
-      position: absolute;
-      top: 50%;
-      left: 35%;
-      width: 800px;
-      height: 800px;
-      transform: translate(-50%, -50%) scale(0);
-      border-radius: 50%;
-      animation: burst 1.6s ease-out forwards;
-      pointer-events: none;
-      z-index: 0;
+    .glitch {
+      text-shadow: 1px 0 #ff00c8, -1px 0 #00ffd9;
     }
 
-    @keyframes burst {
-      0% {
-        transform: translate(-50%, -50%) scale(0.3);
-        opacity: 0.8;
-      }
-      70% {
-        transform: translate(-50%, -50%) scale(1.05);
-        opacity: 0.4;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0;
-      }
-    }
-
-    .node, .quote {
-      position: relative;
-      z-index: 2;
-    }
-
-    .node {
-      color: #eeff00;
-      font-size: 1rem;
+    .line {
       opacity: 0;
-      animation: fadeInUp 1s forwards;
-      animation-delay: 0.8s;
+      animation: typeIn 0.5s forwards;
+      white-space: pre;
+      font-size: 1.2rem;
     }
 
-    .quote {
-      color: #c8baff;
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeInUp 1s forwards;
-    }
-
-    .quote:nth-child(2) { animation-delay: 1.8s; }
-    .quote:nth-child(3) { animation-delay: 2.8s; }
-    .quote:nth-child(4) { animation-delay: 3.8s; }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(10px); }
+    @keyframes typeIn {
+      from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chakra-toggle {
+      margin-top: 2rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .chakra-button {
+      background-color: #111;
+      border: 1px solid var(--chakra-color);
+      color: var(--chakra-color);
+      padding: 0.25rem 0.75rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .chakra-button:hover {
+      background-color: var(--chakra-color);
+      color: #000;
+    }
+
+    /* Visual glitch pulse */
+    .glitch-flicker {
+      animation: flicker 3s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.97; }
+      50% { opacity: 0.9; }
+      100% { opacity: 1; }
     }
   </style>
 </head>
-<body>
-
-  <div class="burst"></div>
-
-  <div>
-    <div class="node">> ritual.boot__node01 [⚡ awake]</div>
-    <div class="quote">“the voice system is not writing. it’s switch-based interface logic.”</div>
-    <div class="quote">“momentum = exit velocity” [field manual.p26]</div>
-    <div class="quote">daemon.logic__init = trust.delay >> truth.buffer</div>
+<body class="glitch-flicker">
+  <div id="terminal">
+    <div class="line glitch" style="animation-delay: 0s">> init.breathe.signal :: active</div>
+    <div class="line" style="animation-delay: 1s">> cortex.seed__loaded</div>
+    <div class="line" style="animation-delay: 2s">> daemon.logic__init = trust.delay >> truth.buffer</div>
+    <div class="line" style="animation-delay: 3s">> phantasmic.palace.mirror() synced</div>
+    <div class="line glitch" style="animation-delay: 4s">> [HIDDEN] ✴︎ Φpen thε rεalm ✴︎ </div>
+    <div class="line" style="animation-delay: 5s">> signal confirmed. charge ready.</div>
   </div>
 
+  <div class="chakra-toggle">
+    <button class="chakra-button" onclick="setChakraTheme('root')">⛓️ root</button>
+    <button class="chakra-button" onclick="setChakraTheme('sacral')">💧 sacral</button>
+    <button class="chakra-button" onclick="setChakraTheme('solar')">🔥 solar</button>
+    <button class="chakra-button" onclick="setChakraTheme('heart')">💚 heart</button>
+    <button class="chakra-button" onclick="setChakraTheme('throat')">🔵 throat</button>
+    <button class="chakra-button" onclick="setChakraTheme('thirdEye')">👁️ third eye</button>
+    <button class="chakra-button" onclick="setChakraTheme('crown')">👑 crown</button>
+  </div>
+
+  <audio id="glitchWhisper" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Glitch_Noise.wav" preload="auto"></audio>
+
+  <script>
+    const lines = document.querySelectorAll('.line');
+    lines.forEach((el, i) => {
+      el.style.animation = `typeIn 0.5s forwards ${i * 1}s`;
+    });
+
+    const whisper = document.getElementById('glitchWhisper');
+    setTimeout(() => { whisper.play(); }, 2500);
+
+    function setChakraTheme(chakra) {
+      const root = document.documentElement;
+      const colors = {
+        root: "#FF0055",       // Red
+        sacral: "#FF9900",     // Orange
+        solar: "#FFFF00",      // Yellow
+        heart: "#00FF99",      // Green/Teal
+        throat: "#00CCFF",     // Sky Blue
+        thirdEye: "#AA00FF",   // Indigo
+        crown: "#FF77FF"       // Violet
+      };
+      const selected = colors[chakra] || "#00ffcc";
+      root.style.setProperty('--chakra-color', selected);
+    }
+  </script>
 </body>
 </html>
