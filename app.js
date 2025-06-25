@@ -3,7 +3,8 @@ function playSound(button) {
   const audio = document.getElementById(chakra);
   if (audio) {
     audio.currentTime = 0;
-    audio.play();
+    audio.volume = 0.7; // optional: soften by default
+    audio.play().catch(err => console.warn(`Sound playback failed for ${chakra}:`, err));
   }
 }
 
@@ -22,12 +23,15 @@ function applyTheme(chakra) {
   document.body.style.backgroundColor = '#000';
   document.body.style.color = color;
 
+  // Update terminal text lines
   document.querySelectorAll('.line').forEach(line => {
     line.style.color = color;
   });
 
+  // Update button borders and text color
   document.querySelectorAll('.chakra-button').forEach(btn => {
     btn.style.borderColor = color;
+    btn.style.color = color;
   });
 }
 
@@ -36,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buttons.forEach(button => {
     button.addEventListener('click', () => {
       const chakra = button.getAttribute('data-chakra');
+      if (!chakra) return;
       playSound(button);
       applyTheme(chakra);
     });
