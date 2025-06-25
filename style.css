@@ -1,64 +1,25 @@
 
 body {
-<<<<<<< HEAD
-  background-color: black;
-  color: white;
-  font-family: 'Courier New', monospace;
-  padding: 2rem;
-  overflow: hidden;
-  transition: background 1s, color 1s;
-=======
   background: #000;
   color: #72f9ff;
   font-family: 'Courier New', monospace;
   padding: 2rem;
   font-size: 1.5rem;
->>>>>>> d08a02f20a57324dd99d2dd49505f0f3acd1fcce
 }
-#controls {
-  margin-top: 20px;
+
+#terminal {
+  margin-bottom: 2rem;
 }
+
 button {
-<<<<<<< HEAD
-  margin-right: 10px;
-  padding: 10px;
-=======
   background: transparent;
   color: #72f9ff;
   border: 2px solid;
   padding: 0.5rem 1.5rem;
   margin: 0.3rem;
   font-size: 1.1rem;
->>>>>>> d08a02f20a57324dd99d2dd49505f0f3acd1fcce
   font-family: 'Courier New', monospace;
-  border: none;
   cursor: pointer;
-<<<<<<< HEAD
-}
-.chakra-root {
-  background-color: #1b1b1b;
-  color: #f44336;
-}
-.chakra-sacral {
-  background-color: #2a1f1f;
-  color: #ff9800;
-}
-.chakra-solar {
-  background-color: #222211;
-  color: #ffeb3b;
-}
-.chakra-heart {
-  background-color: #1a2b1a;
-  color: #4caf50;
-}
-.chakra-throat {
-  background-color: #102b3f;
-  color: #03a9f4;
-}
-.chakra-third-eye {
-  background-color: #211a3a;
-  color: #673ab7;
-=======
   transition: all 0.3s ease-in-out;
   border-radius: 4px;
   box-shadow: 0 0 5px #00ffff33;
@@ -117,9 +78,8 @@ button[data-chakra="crown"] {
 }
 button[data-chakra="crown"]:hover {
   background: #ab47bc33;
->>>>>>> d08a02f20a57324dd99d2dd49505f0f3acd1fcce
 }
-.chakra-crown {
-  background-color: #2e003e;
-  color: #e1bee7;
+
+body {
+  transition: color 0.5s ease, background-color 0.5s ease;
 }

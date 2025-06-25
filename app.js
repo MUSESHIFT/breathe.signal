@@ -1,34 +1,39 @@
 
-document.addEventListener("DOMContentLoaded", function () {
-  const terminal = document.getElementById("terminal");
-  const lines = [
-    "> init.breathe.signal :: active",
-    "> cortex.seed__loaded",
-    "> daemon.logic__init = trust.delay >> truth.buffer",
-    "> phantasmic.palace.mirror() synced",
-    "> “momentum = exit velocity” [museshift field manual p.26]",
-    "> OS signature: xenocore__c000"
-  ];
-  let delay = 0;
-  lines.forEach((text, i) => {
-    const div = document.createElement("div");
-    div.className = "line";
-    div.textContent = text;
-    div.style.opacity = 0;
-    setTimeout(() => {
-      div.style.opacity = 1;
-      terminal.appendChild(div);
-    }, i * 1000);
-  });
+const chakraColors = {
+  root: "#e53935",
+  sacral: "#ff9800",
+  solar: "#fdd835",
+  heart: "#66bb6a",
+  throat: "#42a5f5",
+  third_eye: "#7e57c2",
+  crown: "#ec407a"
+};
 
-  document.querySelectorAll("button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const chakra = btn.getAttribute("data-chakra");
-      document.body.className = `chakra-${chakra}`;
-      document.body.setAttribute("data-chakra", chakra);
-      const sound = document.getElementById("chakra-sound");
-      sound.src = `sounds/${chakra}.mp3`;
-      sound.play();
-    });
+const buttons = document.querySelectorAll(".chakra-button");
+const body = document.body;
+
+// Set initial chakra
+let currentChakra = "solar";
+applyChakra(currentChakra);
+
+// Add listeners
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const chakra = button.getAttribute("data-chakra");
+    const sound = new Audio(`./sounds/${button.getAttribute("data-sound")}`);
+    sound.play();
+    applyChakra(chakra);
   });
 });
+
+function applyChakra(chakra) {
+  const color = chakraColors[chakra];
+  if (!color) return;
+
+  body.style.setProperty("color", color);
+  buttons.forEach(btn => {
+    btn.style.color = color;
+    btn.style.borderColor = color;
+    btn.style.boxShadow = `0 0 10px ${color}80`;
+  });
+}
