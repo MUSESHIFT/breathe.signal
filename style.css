@@ -1,71 +1,81 @@
 
 body {
   background: #000;
+  color: #72f9ff;
   font-family: 'Courier New', monospace;
-  color: #00ffd9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
-}
-
-.terminal-container {
-  text-align: center;
-  animation: fadeIn 2s ease-in-out;
-}
-
-.terminal-output {
-  margin-bottom: 2rem;
-  background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 0, 200, 0.2);
+  font-size: 1.5rem;
 }
 
-.line {
-  margin: 0.5rem 0;
-  opacity: 0;
-  animation: typeIn 0.5s ease forwards;
-  animation-delay: calc(0.5s * var(--i));
+#terminal {
+  margin-bottom: 2rem;
 }
 
-.line:nth-child(1) { --i: 0; }
-.line:nth-child(2) { --i: 1; }
-.line:nth-child(3) { --i: 2; }
-.line:nth-child(4) { --i: 3; }
-
-.chakra-container {
-  display: flex;
-  gap: 0.6rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.chakra-button {
-  background: black;
-  border: 1px solid #00ffd9;
-  color: #00ffd9;
-  padding: 0.7rem 1.2rem;
-  font-size: 1rem;
-  text-transform: lowercase;
+button {
+  background: transparent;
+  color: #72f9ff;
+  border: 2px solid;
+  padding: 0.5rem 1.5rem;
+  margin: 0.3rem;
+  font-size: 1.1rem;
+  font-family: 'Courier New', monospace;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #00ffff33;
 }
 
-.chakra-button:hover {
-  background: #00ffd9;
-  color: #000;
-  box-shadow: 0 0 10px #00ffd9;
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00ffff99;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Chakra colors */
+button[data-chakra="root"] {
+  border-color: #e53935;
+}
+button[data-chakra="root"]:hover {
+  background: #e5393533;
 }
 
-@keyframes typeIn {
-  0% { opacity: 0; transform: translateY(5px); }
-  100% { opacity: 1; transform: translateY(0); }
+button[data-chakra="sacral"] {
+  border-color: #ff9800;
+}
+button[data-chakra="sacral"]:hover {
+  background: #ff980033;
+}
+
+button[data-chakra="solar"] {
+  border-color: #fdd835;
+}
+button[data-chakra="solar"]:hover {
+  background: #fdd83533;
+}
+
+button[data-chakra="heart"] {
+  border-color: #66bb6a;
+}
+button[data-chakra="heart"]:hover {
+  background: #66bb6a33;
+}
+
+button[data-chakra="throat"] {
+  border-color: #29b6f6;
+}
+button[data-chakra="throat"]:hover {
+  background: #29b6f633;
+}
+
+button[data-chakra="third eye"] {
+  border-color: #7e57c2;
+}
+button[data-chakra="third eye"]:hover {
+  background: #7e57c233;
+}
+
+button[data-chakra="crown"] {
+  border-color: #ab47bc;
+}
+button[data-chakra="crown"]:hover {
+  background: #ab47bc33;
 }
