@@ -22,12 +22,12 @@ button {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 4px;
-  box-shadow: 0 0 5px #00ffff33;
+  box-shadow: 0 0 5px #e6fb0433;
 }
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #00ffff99;
+  box-shadow: 0 0 10px #e6fb0499;
 }
 
 /* Chakra colors */
