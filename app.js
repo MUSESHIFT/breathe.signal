@@ -1,39 +1,37 @@
 
-const chakraColors = {
-  root: "#e53935",
-  sacral: "#ff9800",
-  solar: "#fdd835",
-  heart: "#66bb6a",
-  throat: "#42a5f5",
-  third_eye: "#7e57c2",
-  crown: "#ec407a"
-};
+function playSound(chakra) {
+  const audio = new Audio(`${chakra}.mp3`);
+  audio.volume = 0.7;
+  audio.play();
+}
 
-const buttons = document.querySelectorAll(".chakra-button");
-const body = document.body;
+function applyTheme(chakra) {
+  const colors = {
+    root: '#ff1744',
+    sacral: '#ff9100',
+    solar: '#ffea00',
+    heart: '#00e676',
+    throat: '#00b0ff',
+    third_eye: '#7e57c2',
+    crown: '#d500f9'
+  };
 
-// Set initial chakra
-let currentChakra = "solar";
-applyChakra(currentChakra);
-
-// Add listeners
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    const chakra = button.getAttribute("data-chakra");
-    const sound = new Audio(`./sounds/${button.getAttribute("data-sound")}`);
-    sound.play();
-    applyChakra(chakra);
-  });
-});
-
-function applyChakra(chakra) {
-  const color = chakraColors[chakra];
-  if (!color) return;
-
-  body.style.setProperty("color", color);
-  buttons.forEach(btn => {
-    btn.style.color = color;
-    btn.style.borderColor = color;
-    btn.style.boxShadow = `0 0 10px ${color}80`;
+  const body = document.body;
+  const color = colors[chakra] || '#ffffff';
+  body.style.backgroundColor = '#000';
+  body.style.color = color;
+  document.querySelectorAll('.line').forEach(line => {
+    line.style.color = color;
   });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('button[data-chakra]');
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const chakra = this.getAttribute('data-chakra');
+      playSound(chakra);
+      applyTheme(chakra);
+    });
+  });
+});
