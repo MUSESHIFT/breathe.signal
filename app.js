@@ -6,18 +6,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const whisper = document.getElementById('glitchWhisper');
   setTimeout(() => { whisper.play(); }, 2500);
+
+  const clickSound = document.getElementById("clickSound");
+  const hoverSound = document.getElementById("hoverSound");
+  const secretSound = document.getElementById("secretSound");
+
+  document.querySelectorAll(".chakra-button").forEach(btn => {
+    btn.addEventListener("click", () => clickSound.play());
+    btn.addEventListener("mouseover", () => hoverSound.play());
+  });
+
+  document.querySelectorAll(".line").forEach(line => {
+    if (line.textContent.includes("[HIDDEN]")) {
+      line.addEventListener("click", () => secretSound.play());
+    }
+  });
 });
 
 function setChakraTheme(chakra) {
   const root = document.documentElement;
   const colors = {
-    root: "#FF0055",       // Red
-    sacral: "#FF9900",     // Orange
-    solar: "#FFFF00",      // Yellow
-    heart: "#00FF99",      // Green/Teal
-    throat: "#00CCFF",     // Sky Blue
-    thirdEye: "#AA00FF",   // Indigo
-    crown: "#FF77FF"       // Violet
+    throat: "#5ee0ff"
   };
   const selected = colors[chakra] || "#00ffcc";
   root.style.setProperty('--chakra-color', selected);

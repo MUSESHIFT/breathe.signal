@@ -1,5 +1,5 @@
 :root {
-  --chakra-color: #00ffcc;
+  --chakra-color: #5ee0ff;
   --bg-color: #000000;
 }
 
@@ -57,4 +57,19 @@ body {
   0% { opacity: 0.97; }
   50% { opacity: 0.9; }
   100% { opacity: 1; }
+}
+
+#eye-orb {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  animation: pulseEye 3s infinite;
+  opacity: 0.8;
+  transition: transform 0.2s;
+}
+@keyframes pulseEye {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }

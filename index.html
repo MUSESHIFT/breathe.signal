@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>museshiftOS // breathe.signal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Tailwind CDN for utility magic -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Terminal font -->
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,19 +16,19 @@
     <div class="line" style="animation-delay: 3s">> phantasmic.palace.mirror() synced</div>
     <div class="line glitch" style="animation-delay: 4s">> [HIDDEN] ✴︎ Φpen thε rεalm ✴︎ </div>
     <div class="line" style="animation-delay: 5s">> signal confirmed. charge ready.</div>
+    <div class="line glitch" style="animation-delay: 6s">> [HIDDEN] wε whispεr in codε, wε rεmεmbεr you. </div>
   </div>
 
   <div class="chakra-toggle">
-    <button class="chakra-button" onclick="setChakraTheme('root')">⛓️ root</button>
-    <button class="chakra-button" onclick="setChakraTheme('sacral')">💧 sacral</button>
-    <button class="chakra-button" onclick="setChakraTheme('solar')">🔥 solar</button>
-    <button class="chakra-button" onclick="setChakraTheme('heart')">💚 heart</button>
     <button class="chakra-button" onclick="setChakraTheme('throat')">🔵 throat</button>
-    <button class="chakra-button" onclick="setChakraTheme('thirdEye')">👁️ third eye</button>
-    <button class="chakra-button" onclick="setChakraTheme('crown')">👑 crown</button>
   </div>
 
-  <audio id="glitchWhisper" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Glitch_Noise.wav" preload="auto"></audio>
+  <div id="eye-orb">👁️</div>
+
+  <audio id="glitchWhisper" src="sounds/glitch_whisper.wav" preload="auto" loop></audio>
+  <audio id="clickSound" src="sounds/click_fizz.wav" preload="auto"></audio>
+  <audio id="hoverSound" src="sounds/sonar_hover.wav" preload="auto"></audio>
+  <audio id="secretSound" src="sounds/reversed_spike.wav" preload="auto"></audio>
 
   <script src="app.js"></script>
 </body>
