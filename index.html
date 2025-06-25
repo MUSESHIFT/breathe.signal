@@ -19,28 +19,38 @@
       position: relative;
     }
 
-    .aura {
-      background: radial-gradient(circle, rgba(255, 255, 153, 0.25) 0%, transparent 70%);
-      border-radius: 50%;
-      width: 800px;
-      height: 800px;
+    .burst {
+      background: radial-gradient(circle, rgba(255, 255, 153, 0.75) 0%, transparent 60%);
       position: absolute;
       top: 50%;
       left: 35%;
-      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      animation: burst 1.6s ease-out forwards;
       pointer-events: none;
-      animation: pulse 6s ease-in-out infinite;
+      z-index: 0;
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1) translate(-50%, -50%);
-        opacity: 0.15;
+    @keyframes burst {
+      0% {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0.8;
       }
-      50% {
-        transform: scale(1.08) translate(-50%, -50%);
-        opacity: 0.35;
+      70% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.4;
       }
+      100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .node, .quote {
+      position: relative;
+      z-index: 2;
     }
 
     .node {
@@ -48,7 +58,7 @@
       font-size: 1rem;
       opacity: 0;
       animation: fadeInUp 1s forwards;
-      animation-delay: 0.5s;
+      animation-delay: 0.8s;
     }
 
     .quote {
@@ -60,9 +70,9 @@
       animation: fadeInUp 1s forwards;
     }
 
-    .quote:nth-child(2) { animation-delay: 1.5s; }
-    .quote:nth-child(3) { animation-delay: 2.5s; }
-    .quote:nth-child(4) { animation-delay: 3.5s; }
+    .quote:nth-child(2) { animation-delay: 1.8s; }
+    .quote:nth-child(3) { animation-delay: 2.8s; }
+    .quote:nth-child(4) { animation-delay: 3.8s; }
 
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(10px); }
@@ -72,7 +82,7 @@
 </head>
 <body>
 
-  <div class="aura"></div>
+  <div class="burst"></div>
 
   <div>
     <div class="node">> ritual.boot__node01 [⚡ awake]</div>
