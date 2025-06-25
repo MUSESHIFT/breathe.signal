@@ -1,30 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
 body {
   background: #000;
-  font-family: 'Courier New', monospace;
   color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
   padding: 2rem;
+  margin: 0;
+  transition: background-color 0.8s ease, color 0.8s ease;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII='); /* subtle grain pixel */
+  opacity: 0.08;
+  z-index: 1;
 }
 
 .line {
   margin: 0.5em 0;
-  transition: color 0.5s;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: calc(var(--line-index, 0) * 0.4s);
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .chakra-container {
-  margin-top: 2rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 2;
 }
 
 .chakra-button {
-  padding: 0.5em 1em;
-  margin: 0.2em;
-  background: transparent;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  padding: 0.6em 1.2em;
   border: 2px solid #fff;
+  background: transparent;
   color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
   font-size: 1rem;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: border-color 0.5s ease, color 0.5s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 2;
 }
 
-.chakra-button:hover {
-  background: #222;
+.chakra-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.chakra-button:hover::before {
+  opacity: 0.5;
+}
+
+.chakra-button:active {
+  transform: scale(0.98);
+  filter: hue-rotate(20deg);
+}
+
+.chakra-button:active::before {
+  opacity: 1;
+  animation: glitch 0.2s linear;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(3px, -1px); }
+  60% { transform: translate(-1px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
 }
