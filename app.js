@@ -1,10 +1,10 @@
 function playSound(button) {
-  const soundFile = button.getAttribute('data-sound');
-  if (soundFile) {
-    const audio = new Audio(soundFile);
-    audio.volume = 0.7;
-    audio.play();
-  }
+const chakra = button.getAttribute('data-chakra');
+const audio = document.getElementById(chakra);
+if (audio) {
+  audio.currentTime = 0;
+  audio.play();
+}
 }
 
 function applyTheme(chakra) {
