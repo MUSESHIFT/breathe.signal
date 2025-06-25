@@ -53,3 +53,7 @@ button:hover {
 [data-chakra="crown"] {
   --chakra-color: #ab47bc;
 }
+
+body {
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
