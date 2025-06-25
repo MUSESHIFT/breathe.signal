@@ -1,26 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const bootSequence = document.getElementById("boot-sequence");
-  const mainInterface = document.getElementById("main-interface");
-  const startButton = document.getElementById("start-button");
-  const skipProtocolButton = document.getElementById("skip-protocol-button");
-
-  startButton.addEventListener("click", () => {
-    bootSequence.classList.add("hidden");
-    mainInterface.classList.remove("hidden");
-    transitionTo("intro_sequence");
+  const lines = document.querySelectorAll('.line');
+  lines.forEach((el, i) => {
+    el.style.animation = `typeIn 0.5s forwards ${i * 1}s`;
   });
 
-  skipProtocolButton.addEventListener("click", () => {
-    transitionTo("init");
-  });
-
-  const screen = document.getElementById("screen");
-  const controls = document.getElementById("controls");
-  const statusText = document.getElementById("status-text");
-  const userIdDisplay = document.getElementById("user-id-display");
-
-  function transitionTo(state) {
-    screen.textContent = ">> " + state + " protocol loading...";
-    statusText.textContent = `state::${state}`;
-  }
+  const whisper = document.getElementById('glitchWhisper');
+  setTimeout(() => { whisper.play(); }, 2500);
 });
+
+function setChakraTheme(chakra) {
+  const root = document.documentElement;
+  const colors = {
+    root: "#FF0055",       // Red
+    sacral: "#FF9900",     // Orange
+    solar: "#FFFF00",      // Yellow
+    heart: "#00FF99",      // Green/Teal
+    throat: "#00CCFF",     // Sky Blue
+    thirdEye: "#AA00FF",   // Indigo
+    crown: "#FF77FF"       // Violet
+  };
+  const selected = colors[chakra] || "#00ffcc";
+  root.style.setProperty('--chakra-color', selected);
+}

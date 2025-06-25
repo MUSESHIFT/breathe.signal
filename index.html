@@ -8,69 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Terminal font -->
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --chakra-color: #00ffcc;
-      --bg-color: #000000;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--chakra-color);
-      font-family: 'VT323', monospace;
-      padding: 2rem;
-      overflow: hidden;
-    }
-
-    .glitch {
-      text-shadow: 1px 0 #ff00c8, -1px 0 #00ffd9;
-    }
-
-    .line {
-      opacity: 0;
-      animation: typeIn 0.5s forwards;
-      white-space: pre;
-      font-size: 1.2rem;
-    }
-
-    @keyframes typeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .chakra-toggle {
-      margin-top: 2rem;
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .chakra-button {
-      background-color: #111;
-      border: 1px solid var(--chakra-color);
-      color: var(--chakra-color);
-      padding: 0.25rem 0.75rem;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-
-    .chakra-button:hover {
-      background-color: var(--chakra-color);
-      color: #000;
-    }
-
-    /* Visual glitch pulse */
-    .glitch-flicker {
-      animation: flicker 3s infinite alternate;
-    }
-
-    @keyframes flicker {
-      0% { opacity: 0.97; }
-      50% { opacity: 0.9; }
-      100% { opacity: 1; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="glitch-flicker">
   <div id="terminal">
@@ -94,29 +32,6 @@
 
   <audio id="glitchWhisper" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Glitch_Noise.wav" preload="auto"></audio>
 
-  <script>
-    const lines = document.querySelectorAll('.line');
-    lines.forEach((el, i) => {
-      el.style.animation = `typeIn 0.5s forwards ${i * 1}s`;
-    });
-
-    const whisper = document.getElementById('glitchWhisper');
-    setTimeout(() => { whisper.play(); }, 2500);
-
-    function setChakraTheme(chakra) {
-      const root = document.documentElement;
-      const colors = {
-        root: "#FF0055",       // Red
-        sacral: "#FF9900",     // Orange
-        solar: "#FFFF00",      // Yellow
-        heart: "#00FF99",      // Green/Teal
-        throat: "#00CCFF",     // Sky Blue
-        thirdEye: "#AA00FF",   // Indigo
-        crown: "#FF77FF"       // Violet
-      };
-      const selected = colors[chakra] || "#00ffcc";
-      root.style.setProperty('--chakra-color', selected);
-    }
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
